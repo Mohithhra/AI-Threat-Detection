@@ -1,0 +1,32 @@
+From: "Apple Executive Office" <tim.cook@apple-executive-support.xyz>
+To: victim@company.com
+Subject: URGENT: Immediate Action Required - Confidential Acquisition Wire Transfer
+Date: Wed, 27 Aug 2026 09:15:00 +0000
+Message-ID: <20260827091500.84920.phish@apple-executive-support.xyz>
+Return-Path: <bounce-handler@random-spammer-relay.xyz>
+Reply-To: <external-attacker-box@darkweb-mail.top>
+Authentication-Results: mx.company.com;
+ spf=softfail (sender IP 185.220.101.5 is not designated permitted sender) smtp.mailfrom=bounce-handler@random-spammer-relay.xyz;
+ dkim=fail (signature did not verify);
+ dmarc=fail (p=none dis=none) header.from=apple-executive-support.xyz
+Received: from mail-relay-attacker.xyz (mail-relay-attacker.xyz [185.220.101.5])
+    by mx.company.com (Postfix) with ESMTPS id 4T093K12
+    for <victim@company.com>; Wed, 27 Aug 2026 09:15:05 +0000
+MIME-Version: 1.0
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+<head><title>Urgent Wire</title></head>
+<body>
+<p>Hello Team,</p>
+<p>We are closing a strictly confidential strategic acquisition today. <strong>Immediate action required</strong> to avoid contract penalties.</p>
+<p>Please initiate a wire transfer of $45,000 to our escrow partner immediately.</p>
+<p>Click below to verify the invoice credentials and wire routing instructions:</p>
+<p><a href="http://185.220.101.5/apple-verify/login.php">https://secure.apple.com/corporate-acquisition-wire</a></p>
+<p>Do not discuss this via phone as I am boarding an international flight.</p>
+<br/>
+<p>Best regards,<br/>Tim Cook<br/>Chief Executive Officer</p>
+</body>
+</html>

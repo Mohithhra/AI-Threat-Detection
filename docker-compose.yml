@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  sentinel-eml:
+    build: .
+    container_name: sentinel_eml_platform
+    ports:
+      - "8000:8000"
+    environment:
+      - VIRUSTOTAL_API_KEY=${VIRUSTOTAL_API_KEY}
+      - ABUSEIPDB_API_KEY=${ABUSEIPDB_API_KEY}
+    volumes:
+      - ./reports:/app/reports
+      - ./email_threat_analyzer.db:/app/email_threat_analyzer.db
+    restart: unless-stopped

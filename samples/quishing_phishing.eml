@@ -1,0 +1,32 @@
+From: "IT Support Desk" <security-update@office365-verify.com>
+To: victim@company.com
+Subject: [URGENT] Mandatory MFA Authentication Update - Scan QR Code
+Date: Thu, 27 Aug 2026 10:15:00 +0530
+Message-ID: <982341.quishing@office365-verify.com>
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="----=_Part_98234"
+
+------=_Part_98234
+Content-Type: text/plain; charset=UTF-8
+
+URGENT: Your Multi-Factor Authentication (MFA) token expires today.
+To avoid account termination within 24 hours, scan the QR code below with your smartphone camera to re-verify your credentials immediately.
+
+------=_Part_98234
+Content-Type: text/html; charset=UTF-8
+
+<!DOCTYPE html>
+<html>
+<body>
+<h2 style="color: #d97706;">Mandatory Security Re-Authentication Required</h2>
+<p>Dear Employee,</p>
+<p>Your Office 365 MFA security token will expire within <strong>24 hours</strong>. Action is required immediately to prevent account suspension.</p>
+<p><strong>Scan the QR Code below with your mobile device camera to update your credentials:</strong></p>
+<div style="background:#fff; padding:15px; width:200px; text-align:center; border:2px dashed #d97706;">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==" alt="QR Code Login" width="180" height="180" />
+    <p style="font-size:12px; color:#666;">Scan QR Code to Login</p>
+</div>
+<p style="color:red; font-size:12px;">Do not share this email. Confidential IT Helpdesk notification.</p>
+</body>
+</html>
+------=_Part_98234--

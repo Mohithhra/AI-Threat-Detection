@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      width: 340px;
+      font-family: system-ui, -apple-system, sans-serif;
+      background-color: #0b0f19;
+      color: #e2e8f0;
+      margin: 0;
+      padding: 16px;
+    }
+    .header {
+      display: flex;
+      items-center;
+      justify-content: space-between;
+      border-bottom: 1px solid #1e293b;
+      padding-bottom: 10px;
+      margin-bottom: 12px;
+    }
+    .logo {
+      font-weight: 800;
+      font-size: 16px;
+      color: #fff;
+    }
+    .logo span { color: #06b6d4; }
+    .btn {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      font-weight: 700;
+      font-size: 13px;
+      cursor: pointer;
+      margin-top: 8px;
+      transition: all 0.2s;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #06b6d4, #2563eb);
+      color: white;
+    }
+    .btn-primary:hover { opacity: 0.9; }
+    .card {
+      background-color: #131b2e;
+      border: 1px solid #1e293b;
+      border-radius: 10px;
+      padding: 12px;
+      margin-top: 10px;
+      font-size: 12px;
+    }
+    .score-badge {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-weight: bold;
+      font-size: 11px;
+    }
+    .score-malicious { background: rgba(239, 68, 68, 0.2); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.4); }
+    .score-clean { background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.4); }
+    #status-text { font-size: 11px; color: #94a3b8; text-align: center; margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="logo">Sentinel<span>EML 3.0</span></div>
+    <span style="font-size:10px; background:rgba(6,182,212,0.15); color:#22d3ee; padding:2px 6px; border-radius:4px;">Extension</span>
+  </div>
+
+  <p style="font-size:12px; color:#94a3b8; margin:0 0 10px 0;">Instantly inspect open email in webmail (Gmail / Outlook) for threat signals & Quishing.</p>
+
+  <button id="scan-email-btn" class="btn btn-primary">🛡️ Scan Active Email Body</button>
+
+  <div id="results-card" class="card" style="display:none;">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+      <span style="color:#94a3b8;">Risk Score:</span>
+      <span id="score-badge" class="score-badge">--</span>
+    </div>
+    <div style="margin-bottom:6px;"><b>Tactic:</b> <span id="tactic-text" style="color:#a855f7;">--</span></div>
+    <div style="margin-bottom:6px;"><b>SPF/DKIM:</b> <span id="auth-text" style="font-family:monospace;">--</span></div>
+    <p id="summary-text" style="color:#cbd5e1; font-size:11px; margin:4px 0;"></p>
+    <a id="dashboard-link" href="http://localhost:8000" target="_blank" style="color:#06b6d4; font-size:11px; text-decoration:none; display:inline-block; margin-top:6px;">Open Full SOC Dashboard →</a>
+  </div>
+
+  <div id="status-text">Server connected: http://localhost:8000</div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
