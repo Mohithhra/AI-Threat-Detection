@@ -3,7 +3,12 @@ from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
-DB_PATH = os.getenv("DATABASE_URL", "sqlite:///./email_threat_analyzer.db")
+IS_VERCEL = bool(os.getenv("VERCEL"))
+DB_PATH = os.getenv(
+    "DATABASE_URL",
+    "sqlite:////tmp/email_threat_analyzer.db" if IS_VERCEL
+    else "sqlite:///./email_threat_analyzer.db",
+)
 
 engine = create_engine(
     DB_PATH, 

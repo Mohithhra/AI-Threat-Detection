@@ -33,6 +33,8 @@ from .modules.cyber_crime.real_filing_engine import (
 )
 
 load_dotenv()
+# Vercel's filesystem is read-only except /tmp
+REPORTS_DIR = "/tmp/reports" if os.getenv("VERCEL") else "reports"
 init_db()
 
 app = FastAPI(
@@ -185,7 +187,8 @@ def run_analysis_pipeline(eml_content: str, filename: str, db: Session):
     }
 
     # 6. CSE 3: Generate PDF Forensic Report
-    pdf_path = generate_pdf_report(scan_result, output_dir="reports")
+    pdf_path = generate_pdf_report(scan_result, output_dir=REPORTS_DIR)
+
     scan_result["pdf_local_path"] = pdf_path
 
     # Save to in-memory cache for fast instant exports
@@ -377,7 +380,7 @@ def raise_ncrp_cyber_crime_complaint(req: RaiseComplaintRequest, db: Session = D
     complaint["case_id"] = ncrp_payload["ncrp_acknowledgment_no"]
 
     # Generate Cyber Crime PDF Dossier
-    complaint_pdf_path = generate_cyber_crime_pdf(complaint, output_dir="reports")
+    complaint_pdf_path = generate_cyber_crime_pdf(complaint, output_dir=REPORTS_DIR)
     complaint["pdf_local_path"] = complaint_pdf_path
     complaint["download_url"] = f"/api/complaints/{complaint['case_id']}/download"
 
